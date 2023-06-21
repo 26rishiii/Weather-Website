@@ -64,10 +64,10 @@ h1{
 }
 
 .main{
-  max-width: 50%;
+  max-width: 95%;
   max-height: 90%;
-  height: 44rem;
-  width: 40rem;
+  height: 43rem;
+  width: 39rem;
   margin: auto;
   padding: 0 1rem;
   position: relative;
