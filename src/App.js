@@ -5,7 +5,8 @@ import './App.css';
 function App() {
 
   const[data,setData] = useState({})
-  const[location,setLocation] = useState('')
+  var[location,setLocation] = useState('')
+  
   const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=344897150b7865108ffa449147430459&units=metric`
 
   const searchLocation = (button) => {
@@ -18,8 +19,25 @@ function App() {
     }
   }
 
+  const date = (d) => {
+    let months = ["January","February","March","April","May","June","July","August","September",
+    "October","November","December"];
+    let days = ["Sunday","Monday","Tuesday","Wednrsday","Thursday","Friday","Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`
+  }
+
   return (
-    <div className="app">
+    <div className={(typeof data.main != "undefined") 
+                    ? ((data.main.temp<22) 
+                        ? 'app cold' 
+                        : 'app') 
+                    : 'app'}>
       <div className="search">
         <input
         value={location}
@@ -33,6 +51,7 @@ function App() {
           <div className="location">
             <p>{data.name}</p>
           </div>
+          <div classname="date">{date(new Date())}</div>
           <div className="temperature">
             {data.main ? <h1>{data.main.temp}°C</h1> : null}
           </div>
@@ -40,7 +59,7 @@ function App() {
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
-{data.name != undefined &&      
+{data.name !== undefined &&      
         <div className="bottom">
           <div className="feels">
             {data.main ? <p className='bold'>{data.main.feels_like}°C</p> : null}

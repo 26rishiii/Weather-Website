@@ -24,25 +24,50 @@ h1{
 
 .app{
   width: 100%;
-  height: 101.6%;
+  height: 48rem;
   position: relative;
   background-color: rgba(0,0,0,0.5);
   color: #fff;
-  padding: 0%;
   margin: 0%;
+  padding: 0%;
 }
 
-.app:before{
+.app{
   content: '';
   background: url('./imp/background.jpg') no-repeat center/cover;
   position: absolute;
+  transition: 0.5 case-out;
   width: 100%;
-  height: 101.6%;
+  height: 49rem;
   top: 0;
   left: 0;
   z-index: -1;
   padding: 0%;
   margin: 0%;
+}
+
+.app.cold{
+  background: url('./imp/cold.jpg') no-repeat center/cover;
+}
+
+.app.clouds{
+  background: url('./imp/clouds.jpg') no-repeat center/cover;
+}
+
+.app.mist{
+  background: url('./imp/mist.jpg') no-repeat center/cover;
+}
+
+.app.rain{
+  background: url('./imp/rain.jpg') no-repeat center/cover;
+}
+
+.app.clear{
+  background: url('./imp/clear.jpg') no-repeat center/cover;
+}
+
+.app.haze{
+  background: url('./imp/haze.jpg') no-repeat center/cover;
 }
 
 .app .search{
@@ -55,7 +80,7 @@ h1{
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255,255,255,0.8);
-  background: rgba(255,255,255,0.1);
+  background: rgba(41, 16, 16, 0.1);
   color: #f8f8f8;
 }
 
@@ -65,7 +90,7 @@ h1{
 
 .main{
   max-width: 95%;
-  max-height: 90%;
+  max-height: 75%;
   height: 43rem;
   width: 39rem;
   margin: auto;
@@ -79,7 +104,10 @@ h1{
 
 .app .top{
   width: 100%;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50,50,70,0.5);
   margin: 1rem auto;
+
 }
 
 .app .description{
@@ -94,7 +122,8 @@ h1{
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(17, 15, 15, 0.485);
+  text-shadow: 3px 3px rgba(50,50,70,0.5);
 }
 
 .bold{
